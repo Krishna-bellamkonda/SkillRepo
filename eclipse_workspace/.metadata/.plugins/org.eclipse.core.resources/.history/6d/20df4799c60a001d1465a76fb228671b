@@ -1,0 +1,10 @@
+package com.codewithmosh;
+public class Main {
+		
+	
+	public static void main(String[] cmd){
+		String s = "length";
+		System.out.println(stringReversal(s));
+		
+	}
+}

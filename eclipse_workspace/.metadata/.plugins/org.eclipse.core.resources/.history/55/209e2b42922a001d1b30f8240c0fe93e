@@ -1,0 +1,13 @@
+package com.luv2code.springdemo1;
+
+public class HelloSpringApp {
+	public static void main(String[] args) {
+		//load the spring configuration file
+		
+		//retrieve beans from spring container
+		
+		//call methods from the bean
+		
+		//close the context
+	}
+}

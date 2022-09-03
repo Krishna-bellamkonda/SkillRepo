@@ -1,0 +1,38 @@
+package com.codewithmosh;
+
+public class Main {
+	public static void main(String[] arg){
+	
+		//int[][] a = {{0,0} , {0,2}, {2,2}, {2,0}};
+		int a[] = {0,0};
+		int b[] = {0,2};
+		int c[] = {2,2};
+		int d[] = {2,0};
+		
+		if (rightAngle(a, b, c)&& rightAngle(a,d,c)){
+			System.out.println("Rectangle");
+		}
+		else
+			System.out.println("Not a Rectangle");
+		
+	}
+	
+	public static boolean rightAngle(int[] a, int[] b, int[] c) {
+		double S1=0;
+		double S2=0;
+		double D1=0;
+		S1 = (b[0]-a[0]) * (b[0]-a[0]) + (b[1]-a[1]) * (b[1]-a[1]);
+		System.out.println(S1);
+		S2 = (c[0]-b[0]) * (c[0]-b[0]) + (c[1]-b[1]) * (c[1]-b[1]);
+		System.out.println(S2);
+		D1 = (c[0]-a[0]) * (c[0]-a[0]) + (c[1]-a[1]) * (c[1]-a[1]);
+		System.out.println(D1);
+		
+		if (D1 == S1 + S2) { 
+			System.out.println("RightAngle");
+			return true;
+		}
+		else 	
+			return false;		
+	}
+}

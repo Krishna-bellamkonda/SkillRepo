@@ -1,0 +1,58 @@
+package com.luv2code.springdemo1;
+
+public class BaseBallCoach implements Coach{
+	
+	int coachId;
+	String coachName;
+	int coachExp;
+	
+	public String getDailyWorkout() {
+		return "Spend 30 min on batting practice";
+	}
+
+	public BaseBallCoach() {
+		
+	}
+
+	public BaseBallCoach(int coachId, String coachName, int coachExp) {
+		super();
+		this.coachId = coachId;
+		this.coachName = coachName;
+		this.coachExp = coachExp;
+	}
+
+	@Override
+	public String toString() {
+		return "BaseBallCoach [coachId=" + coachId + ", coachName=" + coachName + ", coachExp=" + coachExp + "]";
+	}
+
+	public int getCoachId() {
+		return coachId;
+	}
+
+	public void setCoachId(int coachId) {
+		this.coachId = coachId;
+	}
+
+	public String getCoachName() {
+		return coachName;
+	}
+
+	public void setCoachName(String coachName) {
+		this.coachName = coachName;
+	}
+
+	public int getCoachExp() {
+		return coachExp;
+	}
+
+	public void setCoachExp(int coachExp) {
+		this.coachExp = coachExp;
+	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

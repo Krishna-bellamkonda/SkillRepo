@@ -1,0 +1,40 @@
+Java Frameworks: Frameworks create objects for classes for the developer which is called inversion of control. 
+Eg: Maven, Spring, Hibernate etc
+
+
+Framework: Spring
+	-EE Java Framework
+	-used for all layers or single layer of a real time apps
+	
+Features:
+	-Open Source
+	-Comprehensive Tool
+	-light weight
+	-solves problems
+	-Framework of Frameworks
+	-Avail Array of resources
+
+Why Spring?
+	-Simplicity
+	-Testable
+	-loose coupling
+
+Modules:
+	-Core Container
+	-Data Access/Integretion
+	-Web
+	-AOP
+	-Intrumentation
+	-Test
+	
+	
+Implementation:
+
+	Inversion of Control:
+		1. Add Jar Files for spring core
+		2. configure java object in XML file
+		3. Use spring IOC container. eg: BeanFactory or ApplicationContext
+		
+		Src -> BuildPath -> Config BuildPath -> Java  BuildPath -> libraries -> add external jars
+		
+		

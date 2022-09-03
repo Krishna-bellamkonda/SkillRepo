@@ -1,0 +1,17 @@
+package com.luv2code.springdemo1;
+
+public class CricketCoach implements Coach {
+
+	private FortuneService fortuneService;
+	@Override
+	public String getDailyWorkout() {
+		// TODO Auto-generated method stub
+		return "Work on your form for 2 hrs daily.";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.codewithmosh;
+
+import java.util.Date;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello, World!");
+		int views = 123123321;
+		float percentage = 66.499f;
+		System.out.println(views);
+		Date now = new Date();
+		System.out.println(now.getTime());
+		
+		
+	}
+
+}

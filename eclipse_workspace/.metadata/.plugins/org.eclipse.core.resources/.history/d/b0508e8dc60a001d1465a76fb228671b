@@ -1,0 +1,14 @@
+package com.codewithmosh;
+public class Main {
+	public static String stringReversal(String s){
+		StringBuilder sb = new StringBuilder(s);
+		sb.reverse();
+		return sb.toString();
+	}	
+	
+	public static void main(String[] cmd){
+		String s = "length";
+		System.out.println(stringReversal(s));
+		
+	}
+}

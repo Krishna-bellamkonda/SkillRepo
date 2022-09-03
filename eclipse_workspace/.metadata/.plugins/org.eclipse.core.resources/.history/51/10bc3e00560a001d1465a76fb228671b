@@ -1,0 +1,41 @@
+package com.codewithmosh;
+
+import java.util.Date;
+
+public class Main {
+	public static void main(String[] a) {
+		String str = "qwepalinnilapasd";
+		System.out.println(longPalind(str));
+	}
+
+	public static  int longPalind(String str){
+		int n = str.length();
+		int maxlen= 1;
+		int start = 0;
+		int l, h;
+		
+		for (int i =0 ; i< n; i++){
+			l = i-1;
+			h = i+1;
+			while( h < n && str.charAt(h) == str.charAt(i))
+				h++;
+			while (l >= 0 && str.charAt(l) == str.charAt(i))
+				l--;
+			while (l >=0 && h <n && str.charAt(l) == str.charAt(h)){
+				l--;
+				h++;
+			}
+			
+			int len = h - l -1;
+			if (maxlen < len){
+			maxlen = len;
+			start =l+1;
+			}
+			System.out.println(str.substring(start, start + maxlen));
+			return maxlen;
+		}
+		return maxlen;
+	}
+}
+	
+	

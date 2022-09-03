@@ -1,0 +1,14 @@
+package com.codewithmosh;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello, World!");
+		byte views = (byte)123123321;
+		float percentage = 66.499f;
+		System.out.println(views);
+		
+	}
+
+}

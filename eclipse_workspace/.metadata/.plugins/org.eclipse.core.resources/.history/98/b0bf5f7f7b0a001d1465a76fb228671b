@@ -1,0 +1,47 @@
+package com.codewithmosh;
+
+public class Main{
+	
+
+public static void main(String[] args){
+	int[] arr = {0,1,1,0,0,1,0,1,0,1,1,1,1};
+	int n = arr.length;
+	int result = getMaxLength(arr,n);
+	System.out.println(result);
+	//System.out.println(index(result, ));
+	
+}
+
+static int getMaxLength(int[] arr, int n){
+		int count = 0;
+		int result =0;
+		int index = 0;
+		int i=0;
+		for(i =0 ;i <n; i++){
+			if (arr[i]==0) {
+				count =0;
+				index = -1;
+			}
+			else{
+				count++;
+				result = maximum(result,count);
+				
+			}
+		}
+		System.out.println("index="+(i-count));
+		
+		return result;
+}
+
+public static int maximum(int res, int c){
+		if (res >= c)
+			return res;
+		else
+			return c;
+}
+
+/*public static int index(int i, int result) {
+	return (i - result);
+}*/
+}
+	

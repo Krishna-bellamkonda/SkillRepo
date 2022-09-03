@@ -1,0 +1,21 @@
+package com.luv2code.springdemo1;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class CricketApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		CricketCoach coach = context.getBean("myCoach2",CricketCoach.class);
+		
+		System.out.println(coach.getTeam());
+		System.out.println(coach.getCoachEmail());
+		
+		context.close();
+	}
+
+}

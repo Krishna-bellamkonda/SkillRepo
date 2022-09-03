@@ -1,0 +1,43 @@
+package com.codewithmosh;
+
+public class Main {
+	public static void main(String[] arg){
+		int[][] a = {{0,0} , {0,8}, {2,0}, {2,2}};
+		
+		if (formRect(a) == true)
+			System.out.println("its a rectangle");
+		else
+			System.out.println("not a rectangle");
+
+	}
+
+
+	public static boolean formRect(int[][] a){
+		boolean flag = false;
+		int angle = (int)(slope(a[0][0],a[0][1],a[1][0],a[1][1]) * slope(a[1][0],a[1][1],a[2][0],a[2][1]));
+		if (angle == -1){
+			flag = true;
+		}
+		else
+			return false;
+		
+		angle = (int)(slope(a[2][0],a[2][1],a[3][0],a[3][1]) * slope(a[1][0],a[1][1],a[2][0],a[2][1]));
+		
+		if (angle == -1)
+			flag = true;
+		else 
+			return false;
+		
+		return flag;
+	}
+
+	public static float slope(int x1,int y1,int x2,int y2){
+		int sl = 0;
+		if(x2-x1 != 0)
+			sl = (y2 - y1) / (x2-x1);
+		
+		return sl;
+	}
+	
+}
+	

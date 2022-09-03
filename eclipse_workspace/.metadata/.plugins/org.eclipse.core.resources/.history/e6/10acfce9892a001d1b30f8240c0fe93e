@@ -1,0 +1,13 @@
+package com.luv2code.springdemo1;
+
+public class MyApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Coach thecoach = new BaseBallCoach();
+		
+		System.out.println(thecoach.getDailyWorkout());
+
+	}
+
+}
