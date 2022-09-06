@@ -16,13 +16,16 @@
 	</bean>
 	
     <!-- Define your beans here -->
-    <bean id="myCoach" class="com.luv2code.springdemo1.TrackCoach">
+    <bean id="myCoach" class="com.luv2code.springdemo1.TrackCoach"
+    	init-method="doMyStartupStuff"
+    	destroy-method="doMyCleaningStuff">
     	<constructor-arg ref="myFortune"/>
     	<property name="coachId" value="101"/>
     	<property name="coachExp" value="25"/>
     	<property name="coachName" value="John"/>
     </bean>
     
+    <!-- Below bean's scope is singleton not prototype -->
     <bean id="myCoach1" class="com.luv2code.springdemo1.BaseBallCoach" scope="singleton">
     	<constructor-arg ref="myFortune"/>
     	<property name="coachId" value="102"/>

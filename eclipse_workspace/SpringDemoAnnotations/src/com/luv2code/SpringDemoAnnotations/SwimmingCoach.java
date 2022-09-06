@@ -1,0 +1,23 @@
+package com.luv2code.SpringDemoAnnotations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class SwimmingCoach implements Coach {
+
+	@Autowired
+	FortuneService fortune;
+	
+	@Override
+	public String getDailyWorkout() {
+
+		return "Swim daily for 1 hour";
+	}
+	
+	public String getDailyFortune() {
+		return fortune.getDailyFortune();
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.luv2code.SpringDemoAnnotations;
+
+public class SwimmingCoach implements Coach {
+
+	@Override
+	public String getDailyWorkout() {
+
+		return "Swim daily for 1 hour";
+	}
+
+}

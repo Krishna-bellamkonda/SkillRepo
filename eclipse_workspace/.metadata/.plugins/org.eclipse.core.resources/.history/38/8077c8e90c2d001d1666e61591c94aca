@@ -1,0 +1,22 @@
+package com.luv2code.SpringDemoAnnotations;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class SwimmingCoach implements Coach {
+
+	FortuneService fortune;
+	
+	@Override
+	public String getDailyWorkout() {
+
+		return "Swim daily for 1 hour";
+	}
+
+	public SwimmingCoach(FortuneService fortune) {
+		this.fortune = fortune;
+	}
+	
+	
+
+}

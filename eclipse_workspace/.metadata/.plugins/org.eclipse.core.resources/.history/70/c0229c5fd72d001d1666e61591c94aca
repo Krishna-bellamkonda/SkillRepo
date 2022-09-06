@@ -1,0 +1,14 @@
+package com.luv2code.SpringDemoAnnotations;
+
+public class RandomFortuneService implements FortuneService {
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Your fortune service should read the fortunes from a file.
+		// TODO The fortune service should load the fortunes into an array
+		// TODO return a random fortune from the array.
+		
+		return null;
+	}
+
+}

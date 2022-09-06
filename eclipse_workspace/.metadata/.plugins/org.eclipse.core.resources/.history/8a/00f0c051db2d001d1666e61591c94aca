@@ -1,0 +1,35 @@
+package com.luv2code.SpringDemoAnnotations;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("theSillyCoach")
+public class TennisCoach implements Coach {
+
+	private FortuneService fortune,fortune1;
+	
+	@Override
+	public String getDailyWorkout() {
+		
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		
+		return fortune.getDailyFortune();
+	}
+	
+	@Autowired
+	public void setFortuneService(@Qualifier("HappyFortuneSerivce")FortuneService fortune1) {
+		System.out.println("setFortuneService");
+		this.fortune1 = fortune1;
+	}
+	
+	@Autowired
+	public void setFortune(FortuneService fortune) {
+		System.out.println("setFortune");
+		this.fortune = fortune;
+	}
+}

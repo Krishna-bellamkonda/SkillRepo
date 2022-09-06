@@ -38,3 +38,109 @@ Implementation:
 		Src -> BuildPath -> Config BuildPath -> Java  BuildPath -> libraries -> add external jars
 		
 		
+--------------------------------------------------
+FAQ: How to inject properties file using Java annotations
+FAQ: How to inject properties file using Java annotations
+
+
+
+Answer:
+
+This solution will show you how inject values from a properties file using annotatons. The values will no longer be hard coded in the Java code.
+
+1. Create a properties file to hold your properties. It will be a name value pair.  
+
+New text file:  src/sport.properties
+
+foo.email=myeasycoach@luv2code.com
+foo.team=Silly Java Coders
+Note the location of the properties file is very important. It must be stored in src/sport.properties
+
+2. Load the properties file in the XML config file.
+
+File: applicationContext.xml
+
+Add the following lines:
+
+    <context:property-placeholder location="classpath:sport.properties"/>  
+
+This should appear just after the <context:component-scan .../> line
+
+3. Inject the properties values into your Swim Coach: SwimCoach.java
+
+   
+
+@Value("${foo.email}")
+private String email;
+    
+@Value("${foo.team}")
+private String team;
+-------------------------------------------------
+
+
+HEADS UP - FOR JAVA 9, 10 and 11 USERS - @PostConstruct and @PreDestroy
+
+If you are using Java 9 or higher, then you will encounter an error when using @PostConstruct and @PreDestroy in your code. 
+
+These are the steps to resolve it. Come back to the lecture if you hit the error. 
+
+Error
+
+Eclipse is unable to import @PostConstruct or @PreDestroy
+
+This happens because of Java 9 and higher. 
+
+When using Java 9 and higher, javax.annotation has been removed from its default classpath. That's why we Eclipse can't find it.
+
+---
+
+Solution
+
+1. Download the javax.annotation-api-1.3.2.jar from 
+
+https://search.maven.org/remotecontent?filepath=javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar
+
+2. Copy the JAR file to the lib folder of your project
+
+---
+
+Use the following steps to add it to your Java Build Path.
+
+3. Right-click your project, select Properties
+
+4. On left-hand side, click Java Build Path
+
+5. In top-center of dialog, click Libraries
+
+6. Click Classpath and then Click Add JARs ...
+
+7. Navigate to the JAR file <your-project>/lib/javax.annotation-api-1.3.2.jar
+
+8. Click OK then click Apply and Close
+
+Eclipse will perform a rebuild of your project and it will resolve the related build errors.
+
+--------------------------custon destroy method---------------------------------------------------
+public void destroy() throws Exception {
+ 
+		// loop through the prototype beans and call the destroy() method on each one
+		
+        synchronized (prototypeBeans) {
+ 
+        	for (Object bean : prototypeBeans) {
+ 
+        		if (bean instanceof DisposableBean) {
+                    DisposableBean disposable = (DisposableBean)bean;
+                    try {
+                        disposable.destroy();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+ 
+        	prototypeBeans.clear();
+        }
+ 
+---------------------------------------------------------------------------------------------------
+
