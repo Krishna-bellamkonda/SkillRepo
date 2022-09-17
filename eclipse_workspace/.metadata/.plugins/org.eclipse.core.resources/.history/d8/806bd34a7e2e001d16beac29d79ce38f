@@ -1,0 +1,11 @@
+package com.luv2code.SpringConfigJavaCode;
+
+
+public interface Coach {
+	
+	String email = null, team = null;
+
+	public String getDailyWorkout();
+
+	public String getDailyFortune();
+}

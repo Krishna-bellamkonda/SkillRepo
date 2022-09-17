@@ -1,0 +1,38 @@
+package com.luv2code.SpringConfigJavaCode;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class SwimCoach implements Coach {
+
+	private FortuneService fortune;
+	
+	@Value("${foo.email}")
+	private String email;
+	
+	@Value("${foo.team}")
+	private String team;
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public String getTeam() {
+		return team;
+	}
+
+	public SwimCoach(FortuneService fortune) {
+		this.fortune = fortune;
+	}
+	@Override
+	public String getDailyWorkout() {
+
+		return "Swim 1000 meters as a worm up.";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		
+		return fortune.getDailyFortune();
+	}
+
+}
